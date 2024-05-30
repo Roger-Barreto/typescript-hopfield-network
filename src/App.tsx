@@ -10,6 +10,14 @@ import {
 import DarkOutlineButton from "./components/DarkOutlineButton"
 
 function App() {
+  const [corruptedPattern, setCorruptedPattern] = useState<NetworkCell[]>(
+    Array.from({ length: 45 }, () => -1) as NetworkCell[],
+  )
+
+  const [recoveredPattern, setRecoveredPattern] = useState<NetworkCell[]>(
+    Array.from({ length: 45 }, () => -1) as NetworkCell[],
+  )
+
   const patterns = [
     [
       -1, -1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, -1, 1, 1, -1, -1,
@@ -30,16 +38,10 @@ function App() {
     ],
   ] as NetworkCell[][]
 
+  // Calcula a matriz de pesos com base nos padrões fornecidos
   const trainedMatrix = calculateWeights(patterns)
 
-  const [corruptedPattern, setCorruptedPattern] = useState<NetworkCell[]>(
-    Array.from({ length: 45 }, () => -1) as NetworkCell[],
-  )
-
-  const [recoveredPattern, setRecoveredPattern] = useState<NetworkCell[]>(
-    Array.from({ length: 45 }, () => -1) as NetworkCell[],
-  )
-
+  // Função para recuperar o padrão corrompido (Clique do botão "Recuperar")
   const handleClickRecoverPattern = () => {
     const recovered = recoverPattern(trainedMatrix, corruptedPattern)
     setRecoveredPattern(recovered)

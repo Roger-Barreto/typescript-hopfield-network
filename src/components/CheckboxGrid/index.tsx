@@ -1,7 +1,7 @@
 // CheckboxGrid.tsx
 import React, { useState, FC, useMemo, useEffect } from "react"
 import CheckboxGridButton from "../CheckboxGridButton"
-import { NetworkCell } from "src/services/hopfield-mehods"
+import { NetworkCell } from "src/services/hopfield"
 
 interface Props {
   grid?: NetworkCell[]
