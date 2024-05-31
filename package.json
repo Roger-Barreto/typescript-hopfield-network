@@ -1,7 +1,7 @@
 {
   "homepage": "https://roger-barreto.github.io/typescript-hopfield-network",
   "name": "my-project",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
