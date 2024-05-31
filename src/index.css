@@ -1,7 +1,8 @@
+@import "tailgrid/tailgrid.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "tailgrid/tailgrid.css";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
